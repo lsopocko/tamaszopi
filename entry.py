@@ -12,8 +12,6 @@ if not Pin(0, Pin.IN, Pin.PULL_UP).value():
 
 def test():
     
-    do_connect()
-    
     """Test code."""
     # Baud rate of 14500000 seems about the max 
     spi = SPI(2, baudrate=14500000, sck=Pin(7), mosi=Pin(9))
