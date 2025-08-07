@@ -15,30 +15,20 @@ def test():
     """Test code."""
     # Baud rate of 14500000 seems about the max 
     spi = SPI(2, baudrate=14500000, sck=Pin(7), mosi=Pin(9))
-    print('spi started')
     display = Display(spi, dc=Pin(2), cs=Pin(1), rst=Pin(3))
-    print('display started')
 
     w = display.width
     h = display.height
 
     display.clear()
 
-    display.draw_rectangle(0, 0, w, h, RED)
-    display.draw_pixel(0, 0, WHITE)
-    display.draw_pixel(0, h - 1, WHITE)
-    display.draw_pixel(w - 1, 0, WHITE)
-    display.draw_pixel(w - 1, h - 1, WHITE)
+    display.draw_rectangle(0, 0, w, h, WHITE)
     sleep(5)
 
     display.fill_rectangle(0, 0, w, h, GREEN)
     sleep(5)
 
-    display.draw_rectangle(0, 0, w, h, RED)
-    display.draw_pixel(0, 0, WHITE)
-    display.draw_pixel(0, h - 1, WHITE)
-    display.draw_pixel(w - 1, 0, WHITE)
-    display.draw_pixel(w - 1, h - 1, WHITE)
+    display.draw_rectangle(0, 0, w, h, WHITE)
 
     sleep(10)
     display.cleanup()
